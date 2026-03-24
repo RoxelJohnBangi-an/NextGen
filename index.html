@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NexGen — The all-in-one platform to manage your team, track analytics, and build products users love." />
+  <meta name="theme-color" content="#7c3aed" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NexGen — Ship Faster. Scale Smarter." />
+  <meta property="og:description" content="The all-in-one platform for modern software teams." />
+  <meta property="og:type" content="website" />
+
+  <title>NexGen — Ship Faster. Scale Smarter.</title>
+
+  <!-- Stylesheet (relative path, works offline) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!--
+    FONT NOTE:
+    For full offline support, download the Inter font and host it locally:
+    1. Get Inter from https://rsms.me/inter/ (free, open source)
+    2. Place .woff2 files in assets/fonts/
+    3. Add @font-face in style.css pointing to assets/fonts/Inter-*.woff2
+    The system font stack in style.css already falls back gracefully.
+  -->
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     Fixed top navigation. Becomes opaque/blurred on scroll.
+     Hamburger menu activates on mobile.
+============================================================ -->
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo" id="nav-logo" aria-label="NexGen home">
+        <div class="nav-logo-icon">
+          <img src="assets/icons/rocket.svg" alt="" />
+        </div>
+        <span class="nav-logo-text">NexGen</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <!-- Desktop controls: dark toggle + CTA -->
+      <div class="nav-controls">
+        <button class="btn-icon" id="dark-toggle" aria-label="Toggle dark mode">
+          <img src="assets/icons/moon.svg" alt="Dark mode" id="icon-moon" />
+          <img src="assets/icons/sun.svg"  alt="Light mode" id="icon-sun" />
+        </button>
+        <a href="#cta" class="btn-nav-cta">Get Started</a>
+      </div>
+
+      <!-- Mobile hamburger + dark toggle -->
+      <div class="nav-hamburger" id="hamburger-wrap">
+        <button class="btn-icon" id="dark-toggle-mobile" aria-label="Toggle dark mode">
+          <!-- Shares same icons via CSS; handled separately in JS if needed -->
+          <img src="assets/icons/moon.svg" alt="Dark mode" id="icon-moon-m" />
+          <img src="assets/icons/sun.svg"  alt="Light mode" id="icon-sun-m"  style="display:none"/>
+        </button>
+        <button class="btn-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+          <img src="assets/icons/menu.svg"  alt="Open menu"  id="icon-menu"  />
+          <img src="assets/icons/close.svg" alt="Close menu" id="icon-close" />
+        </button>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- Mobile menu (shown/hidden by JS) -->
+  <div id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="#cta" class="btn-mobile-cta">Get Started Free</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     HERO SECTION
+     Full-height intro with headline, subtitle, CTAs,
+     and an illustrated dashboard mockup.
+============================================================ -->
+<section id="hero">
+  <!-- Decorative glow blobs -->
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- Announcement badge -->
+      <div class="hero-badge fade-up">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Introducing NexGen 2.0
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="hero-title fade-up">
+        Ship Faster.<br />
+        <span class="text-gradient">Scale Smarter.</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="hero-subtitle fade-up">
+        The all-in-one platform to manage your team, track analytics, and build
+        products users love. Designed for modern software teams.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="hero-actions fade-up">
+        <a href="#pricing" class="btn-primary">
+          Start for free
+          <img src="assets/icons/arrow-right.svg" alt="" />
+        </a>
+        <a href="#features" class="btn-secondary">
+          <img src="assets/icons/play.svg" alt="" />
+          Watch Demo
+        </a>
+      </div>
+
+      <!-- Dashboard mockup illustration -->
+      <div class="hero-mockup fade-up" aria-label="App dashboard preview">
+        <!-- Title bar -->
+        <div class="mockup-titlebar">
+          <div class="mockup-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup-url">nexgen.app/dashboard</div>
+        </div>
+
+        <!-- Body: sidebar + main -->
+        <div class="mockup-body">
+
+          <!-- Sidebar -->
+          <aside class="mockup-sidebar">
+            <div class="sidebar-item active">
+              <img src="assets/icons/bar-chart.svg" alt="" />
+              Overview
+            </div>
+            <div class="sidebar-item">
+              <img src="assets/icons/bar-chart.svg" alt="" />
+              Analytics
+            </div>
+            <div class="sidebar-item">
+              <img src="assets/icons/users.svg" alt="" />
+              Team
+            </div>
+            <div class="sidebar-spacer"></div>
+          </aside>
+
+          <!-- Main content area -->
+          <main class="mockup-main">
+            <!-- Stat cards row -->
+            <div class="mockup-stats-row">
+              <div class="mockup-stat-card primary">
+                <div class="mockup-stat-label">Total Revenue</div>
+                <div class="mockup-stat-value">$124,500</div>
+              </div>
+              <div class="mockup-stat-card">
+                <div class="mockup-stat-label">Active Users</div>
+                <div class="mockup-stat-value">8,234</div>
+              </div>
+              <div class="mockup-stat-card positive">
+                <div class="mockup-stat-label">Growth</div>
+                <div class="mockup-stat-value">+24.5%</div>
+              </div>
+            </div>
+
+            <!-- Chart placeholder -->
+            <div class="mockup-chart">
+              <div class="mockup-chart-label"></div>
+              <div class="mockup-bars">
+                <!-- Bar heights in % -->
+                <div class="mockup-bar" style="height:40%"></div>
+                <div class="mockup-bar" style="height:70%"></div>
+                <div class="mockup-bar" style="height:45%"></div>
+                <div class="mockup-bar" style="height:90%"></div>
+                <div class="mockup-bar" style="height:65%"></div>
+                <div class="mockup-bar" style="height:85%"></div>
+                <div class="mockup-bar" style="height:100%"></div>
+                <div class="mockup-bar" style="height:55%"></div>
+                <div class="mockup-bar" style="height:75%"></div>
+                <div class="mockup-bar" style="height:50%"></div>
+              </div>
+            </div>
+          </main>
+
+        </div><!-- /.mockup-body -->
+      </div><!-- /.hero-mockup -->
+
+    </div><!-- /.hero-content -->
+  </div><!-- /.container -->
+</section>
+
+
+<!-- ============================================================
+     FEATURES SECTION
+     4 cards in a 2×2 grid showcasing key product benefits.
+============================================================ -->
+<section id="features">
+  <div class="container">
+
+    <!-- Section heading -->
+    <div class="section-header fade-up">
+      <h2>Everything you need to scale</h2>
+      <p>
+        We've built the most comprehensive toolset for modern teams.
+        Stop juggling dozens of apps and start focusing on what matters.
+      </p>
+    </div>
+
+    <!-- Feature cards grid -->
+    <div class="features-grid">
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon-wrap icon-primary">
+          <img src="assets/icons/bar-chart.svg" alt="" />
+        </div>
+        <h3>Analytics Dashboard</h3>
+        <p>
+          Get real-time insights into your business metrics. Track revenue,
+          user growth, and engagement in one beautiful place.
+        </p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon-wrap icon-blue">
+          <img src="assets/icons/users.svg" alt="" />
+        </div>
+        <h3>Team Collaboration</h3>
+        <p>
+          Work together seamlessly. Assign tasks, share feedback, and keep
+          everyone aligned on the same goals without switching apps.
+        </p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon-wrap icon-green">
+          <img src="assets/icons/shield.svg" alt="" />
+        </div>
+        <h3>Security &amp; Privacy</h3>
+        <p>
+          Enterprise-grade security built-in. Your data is encrypted at rest
+          and in transit with SOC2 compliance and zero-knowledge architecture.
+        </p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon-wrap icon-amber">
+          <img src="assets/icons/zap.svg" alt="" />
+        </div>
+        <h3>Seamless Integrations</h3>
+        <p>
+          Connect with the tools you already use. From Slack to Jira, GitHub
+          to Zendesk — we integrate with 100+ platforms out of the box.
+        </p>
+      </div>
+
+    </div><!-- /.features-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     STATS SECTION
+     4 key numbers to build trust and social proof.
+============================================================ -->
+<section id="stats">
+  <div class="stats-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="stats-grid">
+
+      <div class="stat-item fade-up">
+        <div class="stat-value">10,000+</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+
+      <div class="stat-item fade-up">
+        <div class="stat-value">99.9%</div>
+        <div class="stat-label">Uptime SLA</div>
+      </div>
+
+      <div class="stat-item fade-up">
+        <div class="stat-value">$2M+</div>
+        <div class="stat-label">Revenue Saved</div>
+      </div>
+
+      <div class="stat-item fade-up">
+        <div class="stat-value">4.9/5</div>
+        <div class="stat-label">Customer Rating</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS SECTION
+     3 testimonial cards with avatar, stars, quote, and name.
+============================================================ -->
+<section id="testimonials">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2>Loved by innovative teams</h2>
+      <p>
+        Don't just take our word for it. Hear from the people using our
+        platform to build the future.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <!-- Testimonial 1 -->
+      <article class="testimonial-card fade-up">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+        </div>
+        <blockquote class="testimonial-quote">
+          "This platform completely transformed how our team operates. The analytics
+          are spot-on, and the interface is a joy to use daily."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background-color:#3b82f6;" aria-hidden="true">SJ</div>
+          <div>
+            <div class="author-name">Sarah Jenkins</div>
+            <div class="author-role">VP of Product at TechFlow</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="testimonial-card fade-up">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+        </div>
+        <blockquote class="testimonial-quote">
+          "We consolidated 4 different tools into NexGen. It's saved us thousands
+          of dollars and countless hours of context switching every week."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background-color:#10b981;" aria-hidden="true">MC</div>
+          <div>
+            <div class="author-name">Marcus Chen</div>
+            <div class="author-role">Engineering Manager, BuildCo</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="testimonial-card fade-up">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+          <img src="assets/icons/star.svg" alt="★" />
+        </div>
+        <blockquote class="testimonial-quote">
+          "The onboarding was seamless, and the customer support is unparalleled.
+          Highly recommend NexGen for any growing startup."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background-color:#7c3aed;" aria-hidden="true">ER</div>
+          <div>
+            <div class="author-name">Elena Rodriguez</div>
+            <div class="author-role">Founder &amp; CEO, StartupX</div>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.testimonials-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRICING SECTION
+     3 plans: Basic, Pro (highlighted), Premium.
+============================================================ -->
+<section id="pricing">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2>Simple, transparent pricing</h2>
+      <p>
+        Choose the plan that best fits your needs.
+        No hidden fees. Cancel anytime.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Basic Plan -->
+      <div class="pricing-card fade-up">
+        <div class="plan-name">Basic</div>
+        <div class="plan-price-row">
+          <span class="plan-price">$9</span>
+          <span class="plan-period">/mo</span>
+        </div>
+        <p class="plan-desc">Perfect for individuals starting out.</p>
+
+        <ul class="plan-features">
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Up to 3 projects
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Basic analytics
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            24-hour support response time
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            1 Team member
+          </li>
+        </ul>
+
+        <button class="btn-plan btn-plan-default">Start Basic</button>
+      </div>
+
+      <!-- Pro Plan (recommended) -->
+      <div class="pricing-card popular fade-up">
+        <div class="popular-badge">Most Popular</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price-row">
+          <span class="plan-price">$29</span>
+          <span class="plan-period">/mo</span>
+        </div>
+        <p class="plan-desc">Ideal for growing teams and startups.</p>
+
+        <ul class="plan-features">
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Unlimited projects
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Advanced analytics dashboard
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            1-hour support response time
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Up to 10 team members
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Custom domain
+          </li>
+        </ul>
+
+        <button class="btn-plan btn-plan-primary">Start Pro Free Trial</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card fade-up">
+        <div class="plan-name">Premium</div>
+        <div class="plan-price-row">
+          <span class="plan-price">$79</span>
+          <span class="plan-period">/mo</span>
+        </div>
+        <p class="plan-desc">For scale-ups requiring maximum power.</p>
+
+        <ul class="plan-features">
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Everything in Pro
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Dedicated account manager
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Custom integrations
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            Unlimited team members
+          </li>
+          <li class="plan-feature-item check-primary">
+            <img src="assets/icons/check.svg" alt="✓" />
+            SOC2 Compliance
+          </li>
+        </ul>
+
+        <button class="btn-plan btn-plan-default">Contact Sales</button>
+      </div>
+
+    </div><!-- /.pricing-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA SECTION
+     Final conversion push with a large headline and button.
+============================================================ -->
+<section id="cta">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-glow" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="cta-box scale-in">
+      <h2>Ready to Transform<br />Your Business?</h2>
+      <p>
+        Join thousands of teams already building better products, faster.
+        Setup takes less than 2 minutes.
+      </p>
+      <div class="cta-actions">
+        <a href="#pricing" class="btn-cta-main">
+          Get Started for Free
+          <img src="assets/icons/arrow-right.svg" alt="" />
+        </a>
+        <p class="cta-note">No credit card required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     Multi-column links, social icons, copyright.
+============================================================ -->
+<footer id="footer">
+  <div class="container">
+
+    <!-- Footer columns grid -->
+    <div class="footer-grid">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:4px;" aria-label="NexGen home">
+          <div class="nav-logo-icon">
+            <img src="assets/icons/rocket.svg" alt="" />
+          </div>
+          <span class="nav-logo-text">NexGen</span>
+        </a>
+        <p>
+          Making software teams more productive, one streamlined
+          workflow at a time.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter / X">
+            <img src="assets/icons/twitter.svg" alt="Twitter" />
+          </a>
+          <a href="#" aria-label="GitHub">
+            <img src="assets/icons/github.svg" alt="GitHub" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Product links -->
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company links -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal links -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>© <span id="current-year">2025</span> NexGen Inc. All rights reserved.</p>
+      <div class="footer-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        All systems operational
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- JavaScript (relative path, works offline) -->
+<script src="script.js"></script>
+
+</body>
+</html>
